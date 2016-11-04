@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('content')
-    <form action="{{ $formAction }}" method="post">
+    <form action="/admin/departments/store" method="post">
         <input type="hidden" name="_token"  value="{{ csrf_token() }}">
         <label for="name">نام: </label>
         <input type="text" name="name">

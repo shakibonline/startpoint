@@ -17,7 +17,7 @@ class DepartmentsController extends Controller
     {
         $departments = Department::all();
 
-        return view('admin.departments.create', ['formAction' => $formAction, 'departments' => $departments]);
+        return view('admin.departments.create', ['departments' => $departments]);
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class DepartmentsController extends Controller
     {
         $departments = Department::all();
         $department = Department::find($id);
-        return view('admin.departments.edit', ['formAction' => $formAction, 'department' => $department, 'departments' => $departments]);
+        return view('admin.departments.edit', ['department' => $department, 'departments' => $departments]);
     }
 
     public function update(Request $request, $id)
