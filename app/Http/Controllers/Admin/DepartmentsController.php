@@ -7,7 +7,7 @@ use StartPoint\Http\Controllers\Controller;
 
 class DepartmentsController extends Controller
 {
-    // TODO: Add validation @Abbas Shakiba.
+
     public function index()
     {
         return view('admin.departments.index');
@@ -15,8 +15,6 @@ class DepartmentsController extends Controller
 
     public function create()
     {
-        $formAction = "/admin/departments/store";
-
         $departments = Department::all();
 
         return view('admin.departments.create', ['formAction' => $formAction, 'departments' => $departments]);
@@ -24,6 +22,10 @@ class DepartmentsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'parent_id' => 'required',
+        ]);
         $data = $request->all();
         Department::create($data);
         return redirect('/admin/departments');
@@ -33,13 +35,15 @@ class DepartmentsController extends Controller
     {
         $departments = Department::all();
         $department = Department::find($id);
-        $formAction = "/admin/departments/". $department->id;
-
         return view('admin.departments.edit', ['formAction' => $formAction, 'department' => $department, 'departments' => $departments]);
     }
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'parent_id' => 'required',
+        ]);
         $department = Department::find($id);
         $data = $request->all();
         $department->update($data);
