@@ -1,6 +1,6 @@
 Start Point For Creating Apps with Laravel
 ============
-this is going to be start point for developer and give them some basic infrastructure they need for most of websites. features like authentication, permissions, blog, upload, create static pages, admin interface, notifications, suport systems, newsletter and so on
+this is going to be start point for developer and give them some basic infrastructure they need for most of websites. features like authentication, permissions, blog, upload, create static pages, admin interface, notifications, support systems, newsletter and so on
 
 ## Completed Features
 * Blog
@@ -8,9 +8,15 @@ this is going to be start point for developer and give them some basic infrastru
     * posts pagination
     * alias, published and order for categories
     * migration for building the database schema
-* Others
-    * newsletters
     * powerful admin interface
+* Newsletters
+    * send newsletter
+    * newsletters list
+    * add or remove newsletters member    
+* Tickets
+   * tickets list
+   * tickets categories   
+   * unlimited answers
 
 # install via composer 
     composer create-project mahdi-bagheri/blog App

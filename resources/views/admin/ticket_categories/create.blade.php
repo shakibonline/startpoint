@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="container">
-        <form class="form form-horizontal" method="post" action="/admin/categories">
+        <form class="form form-horizontal" method="post" action="/admin/ticket-categories">
             <input type="hidden" value="{!! csrf_token() !!}" name="_token">
             <fieldset>
                 <legend>
@@ -21,22 +21,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="alias" class="control-label col-md-3">نام مستعار</label>
-
-                            <div class="col-md-7">
-                                <input type="text" value="{{old('alias')}}" class="form-control" id="alias" name="alias">
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="published" class="control-label col-md-3">منتشر شده</label>
 
                             <div class="col-md-7">
-                                @if(old('published'))
-                                    <input checked type="checkbox" class="checkbox-inline" id="published" name="published">
-                                @else
-                                    <input type="checkbox" class="checkbox-inline" id="published" name="published">
-                                @endif
-
+                                <input type="checkbox" class="checkbox-inline" id="published" name="published">
                             </div>
                         </div>
                         <div class="form-group">
@@ -51,7 +39,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-save"></i> ذخیره
                                 </button>
-                                <a href="/admin/categories" class="btn btn-default">
+                                <a href="/admin/ticket-categories" class="btn btn-default">
                                     <i class="fa fa-times-circle-o"></i> انصراف
                                 </a>
                             </div>
